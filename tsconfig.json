@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "./dist",
-    "baseUrl": "./",
-    "target": "ES2020",
+    "target": "ES2023",
+    "types": ["node"],
     "lib": ["DOM", "ESNext"],
-    "module": "Node16",
-    "strict": true,
     "declaration": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "Node16"
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   },
   "include": ["src"]
 }
