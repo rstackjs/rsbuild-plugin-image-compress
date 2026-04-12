@@ -31,8 +31,8 @@ importers:
         specifier: ^24.10.1
         version: 24.10.1
       nano-staged:
-        specifier: ^0.9.0
-        version: 0.9.0
+        specifier: ^1.0.2
+        version: 1.0.2
       playwright:
         specifier: ^1.57.0
         version: 1.57.0
@@ -504,16 +504,13 @@ packages:
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
 
-  nano-staged@0.9.0:
-    resolution: {integrity: sha512-0JfyX4i0Vp5HhC9RDtJ1kp7psz8CFuS3Gya3Z6WZv//QCwA9dPzi1S803VdR0c0P6R7sSvweZ5mSJmYQ/N+loQ==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  nano-staged@1.0.2:
+    resolution: {integrity: sha512-Fytar3zHLY99nlMfqPPbraxZodqQAHPpdPRyYaplL+lB9DCR6pUrafxbG+Btz4+7fO5Rm/+DO4ZeDO/nLSUMhw==}
+    engines: {node: ^22 || >= 24}
     hasBin: true
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
-
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -972,15 +969,11 @@ snapshots:
 
   mdn-data@2.0.30: {}
 
-  nano-staged@0.9.0:
-    dependencies:
-      picocolors: 1.0.0
+  nano-staged@1.0.2: {}
 
   nth-check@2.1.1:
     dependencies:
       boolbase: 1.0.0
-
-  picocolors@1.0.0: {}
 
   picocolors@1.1.1: {}
 
