@@ -67,7 +67,9 @@ export class ImageMinimizerPlugin {
       }
       const { source: inputSource } = asset;
 
-      const eTag = cache.getLazyHashedEtag(inputSource);
+      const eTag = cache.getLazyHashedEtag(
+        inputSource as unknown as Parameters<typeof cache.getLazyHashedEtag>[0],
+      );
       const cacheItem = cache.getItemCache(name, eTag);
       let result = await cacheItem.getPromise<MinimizedResult | undefined>();
 
