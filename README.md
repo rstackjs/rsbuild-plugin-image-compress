@@ -24,7 +24,7 @@ Add plugin to your `rsbuild.config.ts`:
 
 ```ts
 // rsbuild.config.ts
-import { pluginImageCompress } from "@rsbuild/plugin-image-compress";
+import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 
 export default {
   plugins: [pluginImageCompress()],
@@ -38,11 +38,11 @@ This plugin is compatible with both Rsbuild and Rspack. If you are using Rspack 
 By default, the plugin will enable `jpeg`, `png`, `ico` image compressors, which are equivalent to the following two examples:
 
 ```js
-pluginImageCompress(["jpeg", "png", "ico"]);
+pluginImageCompress(['jpeg', 'png', 'ico']);
 ```
 
 ```js
-pluginImageCompress([{ use: "jpeg" }, { use: "png" }, { use: "ico" }]);
+pluginImageCompress([{ use: 'jpeg' }, { use: 'png' }, { use: 'ico' }]);
 ```
 
 ## Supported Compressors
@@ -71,17 +71,17 @@ For example, to allow the jpeg compressor to recognize new extension name and to
 ```js
 pluginImageCompress([
   // Options for @napi-rs/image `compressJpeg` method
-  { use: "jpeg", test: /\.(?:jpg|jpeg|jpe)$/ },
+  { use: 'jpeg', test: /\.(?:jpg|jpeg|jpe)$/ },
   // Options for @napi-rs/image `pngQuantize` method
-  { use: "png", minQuality: 50 },
+  { use: 'png', minQuality: 50 },
   // Options for @napi-rs/image `avif` method
-  { use: "avif", quality: 80 },
+  { use: 'avif', quality: 80 },
   // Options for @napi-rs/image `webp` method
-  { use: "webp", quality: 80 },
+  { use: 'webp', quality: 80 },
   // Options for svgo
-  { use: "svg", floatPrecision: 2 },
+  { use: 'svg', floatPrecision: 2 },
   // No options yet
-  { use: "ico" },
+  { use: 'ico' },
 ]);
 ```
 
@@ -92,7 +92,7 @@ For more information on compressors, please visit [@napi-rs/image](https://image
 The default `png` compressor is lossy. If you want to replace it with a lossless compressor, you can use the following configuration.
 
 ```js
-pluginImageCompress(["jpeg", "pngLossless", "ico"]);
+pluginImageCompress(['jpeg', 'pngLossless', 'ico']);
 ```
 
 The list of configuration options will eventually be converted to the corresponding bundler loader configuration, so compressors follow the same bottom-to-top matching rule.
@@ -100,7 +100,7 @@ The list of configuration options will eventually be converted to the correspond
 For example, the `png` compressor will take precedence over the `pngLossless` compressor for the following configuration:
 
 ```js
-pluginImageCompress(["jpeg", "pngLossless", "ico", "png"]);
+pluginImageCompress(['jpeg', 'pngLossless', 'ico', 'png']);
 ```
 
 ## Rspack Usage
@@ -111,42 +111,42 @@ If you are using Rspack instead of Rsbuild, you can import the `ImageMinimizerPl
 
 ```ts
 // rspack.config.mjs
-import { ImageMinimizerPlugin } from "@rsbuild/plugin-image-compress";
-import { defineConfig } from "@rspack/cli";
+import { ImageMinimizerPlugin } from '@rsbuild/plugin-image-compress';
+import { defineConfig } from '@rspack/cli';
 
 export default defineConfig({
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   optimization: {
     minimizer: [
       // Use `...` to preserve the default JS and CSS minimizers of Rspack
-      "...",
+      '...',
       // Add the image minimizer plugins
       new ImageMinimizerPlugin({
-        use: "jpeg",
+        use: 'jpeg',
         test: /\.(?:jpg|jpeg)$/,
       }),
       new ImageMinimizerPlugin({
-        use: "png",
+        use: 'png',
         test: /\.png$/,
         maxQuality: 50,
       }),
       new ImageMinimizerPlugin({
-        use: "avif",
+        use: 'avif',
         test: /\.avif$/,
         quality: 80,
       }),
       new ImageMinimizerPlugin({
-        use: "webp",
+        use: 'webp',
         test: /\.webp$/,
         quality: 80,
       }),
       new ImageMinimizerPlugin({
-        use: "svg",
+        use: 'svg',
         test: /\.svg$/,
         floatPrecision: 2,
       }),
       new ImageMinimizerPlugin({
-        use: "ico",
+        use: 'ico',
         test: /\.(?:ico|icon)$/,
       }),
     ],

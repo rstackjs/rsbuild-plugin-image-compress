@@ -20,32 +20,27 @@
   "scripts": {
     "build": "rslib",
     "dev": "rslib -w",
-    "lint": "biome check .",
-    "lint:write": "biome check . --write",
+    "lint": "rslint && prettier -c .",
+    "lint:write": "rslint --fix && prettier -w .",
     "prepare": "simple-git-hooks && npm run build",
     "test": "playwright test",
     "bump": "npx bumpp"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx nano-staged"
-  },
-  "nano-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": [
-      "biome check --write --no-errors-on-unmatched"
-    ]
+    "pre-commit": "pnpm run lint:write"
   },
   "dependencies": {
     "@napi-rs/image": "1.11.2",
     "svgo": "^3.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^1.59.1",
     "@rsbuild/core": "^2.0.1",
     "@rslib/core": "^0.21.3",
+    "@rslint/core": "^0.5.0",
     "@types/node": "^24.12.2",
-    "nano-staged": "^1.0.2",
     "playwright": "^1.59.1",
+    "prettier": "^3.8.3",
     "simple-git-hooks": "^2.13.1",
     "typescript": "6.0.3"
   },
