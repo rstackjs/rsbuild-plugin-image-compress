@@ -72,8 +72,11 @@ export const svgCodec: Codec<'svg'> = {
   },
 };
 
-// biome-ignore lint/suspicious/noExplicitAny:allow any
-const codecs: Record<Codecs, Codec<any>> = {
+type CodecMap = {
+  [K in Codecs]: Codec<K>;
+};
+
+const codecs: CodecMap = {
   jpeg: jpegCodec,
   png: pngCodec,
   pngLossless: pngLosslessCodec,
