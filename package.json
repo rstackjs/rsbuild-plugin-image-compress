@@ -44,7 +44,7 @@
     "playwright": "^1.61.1",
     "prettier": "^3.9.4",
     "simple-git-hooks": "^2.13.1",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "peerDependencies": {
     "@rsbuild/core": "^1.0.0 || ^2.0.0"
