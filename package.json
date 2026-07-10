@@ -26,6 +26,8 @@
     "lint:write": "rslint --fix && prettier -w .",
     "prepare": "simple-git-hooks",
     "test": "playwright test",
+    "test:basic": "playwright test test/basic/",
+    "test:conversion": "playwright test test/conversion/",
     "bump": "npx bumpp"
   },
   "simple-git-hooks": {
