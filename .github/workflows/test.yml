@@ -35,7 +35,7 @@ jobs:
           run_install: true
 
       - name: Install Playwright
-        run: npx playwright install
+        run: npx playwright install chromium
 
       - name: Build Packages
         run: pnpm build
