@@ -4,9 +4,9 @@ export default defineConfig([
   js.configs.recommended,
   ts.configs.recommended,
   {
-    files: ['playground/**/*'],
-    rules: {
-      'no-undef': 'off',
+    files: ['playground/src/**/*'],
+    languageOptions: {
+      globals: globals.browser,
     },
   },
   {
