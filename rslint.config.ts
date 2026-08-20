@@ -4,7 +4,7 @@ export default defineConfig([
   js.configs.recommended,
   ts.configs.recommended,
   {
-    files: ['playground/src/**/*'],
+    files: ['playground/src/**/*', 'test/**/src/**/*.{js,jsx}'],
     languageOptions: {
       globals: globals.browser,
     },
@@ -13,12 +13,6 @@ export default defineConfig([
     files: ['**/*.test.{ts,tsx}'],
     languageOptions: {
       globals: globals.rstest,
-    },
-  },
-  {
-    files: ['test/**/src/**/*.{js,jsx}'],
-    languageOptions: {
-      globals: globals.browser,
     },
   },
 ]);
