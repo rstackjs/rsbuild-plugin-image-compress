@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "build": "pnpm --dir .. run build && rs build",
-    "dev": "pnpm --dir .. run build && rs dev"
+    "build": "rs build",
+    "dev": "rs dev"
   }
 }

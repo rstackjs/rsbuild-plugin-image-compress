@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 import type { RsbuildPlugin } from '@rsbuild/core';
-import { ImageMinimizerPlugin } from './minimizer.js';
-import type { Codecs, Options } from './types.js';
-import { withDefaultOptions } from './utils.js';
+import { ImageMinimizerPlugin } from './minimizer.ts';
+import type { Codecs, Options } from './types.ts';
+import { withDefaultOptions } from './utils.ts';
 
 export type PluginImageCompressOptions = Options[];
 export const DEFAULT_OPTIONS: Codecs[] = ['jpeg', 'png', 'ico'];
