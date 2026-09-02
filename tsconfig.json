@@ -8,6 +8,7 @@
     "declaration": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true,
     "module": "nodenext",
     "moduleResolution": "nodenext"
   },

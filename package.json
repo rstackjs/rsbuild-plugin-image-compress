@@ -20,31 +20,25 @@
     "dist"
   ],
   "scripts": {
-    "build": "rslib",
-    "dev": "rslib -w",
-    "lint": "rslint && prettier -c .",
-    "lint:write": "rslint --fix && prettier -w .",
-    "prepare": "simple-git-hooks",
-    "test": "rstest",
-    "bump": "npx bumpp"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm run lint:write"
+    "build": "rs lib",
+    "bump": "pnpx bumpp",
+    "check": "rs check",
+    "dev": "rs lib -w",
+    "format": "rs fmt",
+    "lint": "rs lint",
+    "prepare": "rs hooks",
+    "test": "rs test"
   },
   "dependencies": {
     "@napi-rs/image": "1.11.2",
     "svgo": "^3.3.5"
   },
   "devDependencies": {
-    "@rsbuild/core": "^2.2.1",
-    "@rslib/core": "^0.23.2",
-    "@rslint/core": "^0.9.0",
-    "@rstest/core": "^0.11.11",
+    "@rsbuild/core": "2.2.2",
     "@rstest/playwright": "^0.11.11",
     "@types/node": "^24.13.3",
     "playwright": "^1.62.1",
-    "prettier": "^3.9.6",
-    "simple-git-hooks": "^2.14.0",
+    "rstack": "^0.7.2",
     "typescript": "7.0.2"
   },
   "peerDependencies": {

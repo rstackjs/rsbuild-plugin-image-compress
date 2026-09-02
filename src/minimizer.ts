@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import type { Rspack } from '@rsbuild/core';
-import Codecs from './codecs.js';
-import type { FinalOptions } from './types.js';
+import Codecs from './codecs.ts';
+import type { FinalOptions } from './types.ts';
 
 export const IMAGE_MINIMIZER_PLUGIN_NAME =
   '@rsbuild/plugin-image-compress/minimizer' as const;

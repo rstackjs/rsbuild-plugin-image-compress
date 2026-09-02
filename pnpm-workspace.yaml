@@ -1,6 +1,8 @@
+packages:
+  - playground
+
 allowBuilds:
   core-js: false
-  simple-git-hooks: false
 
 minimumReleaseAgeExclude:
   - '@rsbuild/*'
